@@ -1,4 +1,4 @@
---1.UtwÛrz nowπ bazÍ danych o nazwie firma
+--1.Utw√≥rz nowƒÖ bazƒô danych o nazwie firma
 CREATE DATABASE firma;
 
 USE firma;
@@ -37,12 +37,12 @@ kwota DECIMAL NOT NULL
 --4. Wprowadzenie danych do tabeli
 INSERT INTO rozliczenia.pracownicy VALUES (1, 'Stefan', 'Maj', 'ul. Zwierzyniecka 5, Krakow, 32-890', '+48475839445')
 INSERT INTO rozliczenia.pracownicy VALUES (2, 'Weronika', 'Kula', 'ul. Magnoliowa 1b, Katowice, 35-890', '+48775490637')
-INSERT INTO rozliczenia.pracownicy VALUES (3, 'Jan', 'Adamczyk', 'ul. Prosta 65/45, KrakÛw, 30-059', '+48389778565')
-INSERT INTO rozliczenia.pracownicy VALUES (4, 'Natalia', 'Drabek', 'ul. KrÛtka 56, KrakÛw, 31-098', '+48789676300')
-INSERT INTO rozliczenia.pracownicy VALUES (5, 'Adam', 'Koj', 'al.Mickiewicza 15, KrakÛw, 31-867', '+48664056730')
-INSERT INTO rozliczenia.pracownicy VALUES (6, 'Filip', 'Las', 'ul. Zakπtek 3/49, Lublin, 70-388', '+48504367590')
-INSERT INTO rozliczenia.pracownicy VALUES (7, 'Wojciech', 'Maj', 'ul. Dπbrowskiej 3a, £Ûdü, 90-001', '+48998034504')
-INSERT INTO rozliczenia.pracownicy VALUES (8, 'Katarzyna', 'Nowak', 'ul. Dπbrowskiej 80, Niepo≥omice, 33-657', '+48202345489')
+INSERT INTO rozliczenia.pracownicy VALUES (3, 'Jan', 'Adamczyk', 'ul. Prosta 65/45, Krak√≥w, 30-059', '+48389778565')
+INSERT INTO rozliczenia.pracownicy VALUES (4, 'Natalia', 'Drabek', 'ul. Kr√≥tka 56, Krak√≥w, 31-098', '+48789676300')
+INSERT INTO rozliczenia.pracownicy VALUES (5, 'Adam', 'Koj', 'al.Mickiewicza 15, Krak√≥w, 31-867', '+48664056730')
+INSERT INTO rozliczenia.pracownicy VALUES (6, 'Filip', 'Las', 'ul. ZakƒÖtek 3/49, Lublin, 70-388', '+48504367590')
+INSERT INTO rozliczenia.pracownicy VALUES (7, 'Wojciech', 'Maj', 'ul. DƒÖbrowskiej 3a, ≈Å√≥d≈∫, 90-001', '+48998034504')
+INSERT INTO rozliczenia.pracownicy VALUES (8, 'Katarzyna', 'Nowak', 'ul. DƒÖbrowskiej 80, Niepo≈Çomice, 33-657', '+48202345489')
 INSERT INTO rozliczenia.pracownicy VALUES (9, 'Ewa', 'Koc', 'ul. Maki 22/34, Warszawa, 22-005', '+48336948576')
 INSERT INTO rozliczenia.pracownicy VALUES (10, 'Mateusz', 'Kowalski', 'ul. Dobczycka 78/1, Wieliczka, 32-768', '+48116748500')
 
@@ -58,25 +58,25 @@ INSERT INTO rozliczenia.godziny VALUES (162, '2023-04-20', 8, 6)
 INSERT INTO rozliczenia.godziny VALUES (163, '2023-04-20', 8.5, 4)
 
 INSERT INTO rozliczenia.pensje VALUES (1,'dyrektor', 20500.15,44)
-INSERT INTO rozliczenia.pensje VALUES (2,'inøynier', 8200.45,45)
+INSERT INTO rozliczenia.pensje VALUES (2,'in≈ºynier', 8200.45,45)
 INSERT INTO rozliczenia.pensje VALUES (3,'programista', 8500.23,46)
 INSERT INTO rozliczenia.pensje VALUES (4,'manager', 10400.67,47)
 INSERT INTO rozliczenia.pensje VALUES (5,'asystent', 5600.78,48)
-INSERT INTO rozliczenia.pensje VALUES (6,'staøysta', 3200.11,49)
-INSERT INTO rozliczenia.pensje VALUES (7,'inøynier', 8200.45,50)
-INSERT INTO rozliczenia.pensje VALUES (8,'staøysta', 3200.11,51)
+INSERT INTO rozliczenia.pensje VALUES (6,'sta≈ºysta', 3200.11,49)
+INSERT INTO rozliczenia.pensje VALUES (7,'in≈ºynier', 8200.45,50)
+INSERT INTO rozliczenia.pensje VALUES (8,'sta≈ºysta', 3200.11,51)
 INSERT INTO rozliczenia.pensje VALUES (9,'programista', 8500.45,52)
-INSERT INTO rozliczenia.pensje VALUES (10,'staøysta', 3200.11,53)
+INSERT INTO rozliczenia.pensje VALUES (10,'sta≈ºysta', 3200.11,53)
 
-INSERT INTO rozliczenia.premie VALUES (44, 'úwiπteczna', 1500)
+INSERT INTO rozliczenia.premie VALUES (44, '≈õwiƒÖteczna', 1500)
 INSERT INTO rozliczenia.premie VALUES (45, 'uznaniowa', 500)
 INSERT INTO rozliczenia.premie VALUES (46, 'indywidualna', 350)
-INSERT INTO rozliczenia.premie VALUES (47, 'úwiπteczna', 1000)
+INSERT INTO rozliczenia.premie VALUES (47, '≈õwiƒÖteczna', 1000)
 INSERT INTO rozliczenia.premie VALUES (48, 'kwartalna', 300)
 INSERT INTO rozliczenia.premie VALUES (49, 'motywacyjna', 250)
-INSERT INTO rozliczenia.premie VALUES (50, 'úwiπteczna', 500)
+INSERT INTO rozliczenia.premie VALUES (50, '≈õwiƒÖteczna', 500)
 INSERT INTO rozliczenia.premie VALUES (51, 'motywacyjna', 250)
-INSERT INTO rozliczenia.premie VALUES (52, 'úwiπteczna', 500)
+INSERT INTO rozliczenia.premie VALUES (52, '≈õwiƒÖteczna', 500)
 INSERT INTO rozliczenia.premie VALUES (53, 'motywacyjna', 250)
 
 --Dodawanie kluczy obcych
@@ -87,13 +87,13 @@ ADD FOREIGN KEY (id_pracownika) REFERENCES rozliczenia.pracownicy(id_pracownika)
 ALTER TABLE rozliczenia.pensje
 ADD FOREIGN KEY (id_premii) REFERENCES rozliczenia.premie(id_premii);
 
---5.Wyúwietlanie kolumn: nazwisko i adres pracownikÛw
+--5.Wy≈õwietlanie kolumn: nazwisko i adres pracownik√≥w
 SELECT nazwisko, adres  FROM rozliczenia.pracownicy
 
 --6. Konwersja daty
 SELECT DATEPART ( w , data1 ) as 'dzien_tygodnia ', DATEPART ( m , data1 ) as 'miesiac' FROM rozliczenia.godziny;
 
---7. Zmiana kwoty na kwotÍ brutto oraz utworzenie nowego atrybutu oraz wyliczenie kwoty netto 
+--7. Zmiana kwoty na kwotƒô brutto, utworzenie nowego atrybutu oraz wyliczenie kwoty netto 
 EXEC sp_rename 'rozliczenia.pensje.kwota', 'kwota_brutto', 'COLUMN';
 ALTER TABLE rozliczenia.pensje ADD kwota_netto decimal(7,2);
 UPDATE rozliczenia.pensje set kwota_netto=kwota_brutto*0.81;
