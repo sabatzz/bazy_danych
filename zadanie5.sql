@@ -63,7 +63,7 @@ ADD FOREIGN KEY (id_premii) REFERENCES ksiegowosc.premie(id_premii);
 --Komentarz do tabeli pracownicy
 EXEC sp_addextendedproperty
 @name = 'Opis tabeli pracownicy',
-@value = 'Tabela zawieraj¹ca dane pracowników',
+@value = 'Tabela zawierajÄ…ca dane pracownikÃ³w',
 @level0type = 'Schema',
 @level0name = 'ksiegowosc',
 @level1type = 'Table',
@@ -72,7 +72,7 @@ EXEC sp_addextendedproperty
 --Komentarz do tabeli godziny
 EXEC sp_addextendedproperty
 @name = 'Opis tabeli godziny',
-@value = 'Tabela zawieraj¹ca informacje o czasie pracy',
+@value = 'Tabela zawierajÄ…ca informacje o czasie pracy',
 @level0type = 'Schema',
 @level0name = 'ksiegowosc',
 @level1type = 'Table',
@@ -81,7 +81,7 @@ EXEC sp_addextendedproperty
 --Komentarz do tabeli pensje
 EXEC sp_addextendedproperty
 @name = 'Opis tabeli pensje',
-@value = 'Tabela zawieraj¹ca informacje o pensjach pracowników',
+@value = 'Tabela zawierajÄ…ca informacje o pensjach pracownikÃ³w',
 @level0type = 'Schema',
 @level0name = 'ksiegowosc',
 @level1type = 'Table',
@@ -90,7 +90,7 @@ EXEC sp_addextendedproperty
 --Komentarz do tabeli premie
 EXEC sp_addextendedproperty
 @name = 'Opis tabeli premie',
-@value = 'Tabela zawieraj¹ca informacje o premiach pracowników',
+@value = 'Tabela zawierajÄ…ca informacje o premiach pracownikÃ³w',
 @level0type = 'Schema',
 @level0name = 'ksiegowosc',
 @level1type = 'Table',
@@ -99,18 +99,18 @@ EXEC sp_addextendedproperty
 --Komentarz do tabeli wynagrodzenia
 EXEC sp_addextendedproperty
 @name = 'Opis tabeli wynagrodzenia',
-@value = 'Tabela zwieraj¹ca informacje o pe³nym wynagrodzeniu',
+@value = 'Tabela zwierajÄ…ca informacje o peÅ‚nym wynagrodzeniu',
 @level0type = 'Schema',
 @level0name = 'ksiegowosc',
 @level1type = 'Table',
 @level1name = 'wynagrodzenia';
 
--- Wyœwietlanie komentarzy do tabel
+-- WyÅ›wietlanie komentarzy do tabel
 
 SELECT value AS Comment
 FROM sys.extended_properties
 WHERE major_id = 
-OBJECT_ID('ksiêgowoœæ.pracownicy')
+OBJECT_ID('ksiÄ™gowoÅ›Ä‡.pracownicy')
 AND minor_id = 0
 AND class = 1;
 
@@ -118,12 +118,12 @@ AND class = 1;
 --4. Wprowadzenie danych do tabeli
 INSERT INTO ksiegowosc.pracownicy VALUES (1, 'Stefan', 'Maj', 'ul. Zwierzyniecka 5, Krakow, 32-890', '+48475839445')
 INSERT INTO ksiegowosc.pracownicy VALUES (2, 'Weronika', 'Kuna', 'ul. Magnoliowa 1b, Katowice, 35-890', '+48775490637')
-INSERT INTO ksiegowosc.pracownicy VALUES (3, 'Jan', 'Adamczyk', 'ul. Prosta 65/45, Kraków, 30-059', '+48389778565')
-INSERT INTO ksiegowosc.pracownicy VALUES (4, 'Natalia', 'Drabek', 'ul. Krótka 56, Kraków, 31-098', '+48789676300')
-INSERT INTO ksiegowosc.pracownicy VALUES (5, 'Adam', 'Koj', 'al.Mickiewicza 15, Kraków, 31-867', '+48664056730')
-INSERT INTO ksiegowosc.pracownicy VALUES (6, 'Filip', 'Las', 'ul. Zak¹tek 3/49, Lublin, 70-388', '+48504367590')
-INSERT INTO ksiegowosc.pracownicy VALUES (7, 'Wojciech', 'Maj', 'ul. D¹browskiej 3a, £ódŸ, 90-001', '+48998034504')
-INSERT INTO ksiegowosc.pracownicy VALUES (8, 'Katarzyna', 'Nowak', 'ul. D¹browskiej 80, Niepo³omice, 33-657', '+48202345489')
+INSERT INTO ksiegowosc.pracownicy VALUES (3, 'Jan', 'Adamczyk', 'ul. Prosta 65/45, KrakÃ³w, 30-059', '+48389778565')
+INSERT INTO ksiegowosc.pracownicy VALUES (4, 'Natalia', 'Drabek', 'ul. KrÃ³tka 56, KrakÃ³w, 31-098', '+48789676300')
+INSERT INTO ksiegowosc.pracownicy VALUES (5, 'Adam', 'Koj', 'al.Mickiewicza 15, KrakÃ³w, 31-867', '+48664056730')
+INSERT INTO ksiegowosc.pracownicy VALUES (6, 'Filip', 'Las', 'ul. ZakÄ…tek 3/49, Lublin, 70-388', '+48504367590')
+INSERT INTO ksiegowosc.pracownicy VALUES (7, 'Wojciech', 'Maj', 'ul. DÄ…browskiej 3a, ÅÃ³dÅº, 90-001', '+48998034504')
+INSERT INTO ksiegowosc.pracownicy VALUES (8, 'Katarzyna', 'Nowak', 'ul. DÄ…browskiej 80, NiepoÅ‚omice, 33-657', '+48202345489')
 INSERT INTO ksiegowosc.pracownicy VALUES (9, 'Ewa', 'Koc', 'ul. Maki 22/34, Warszawa, 22-005', '+48336948576')
 INSERT INTO ksiegowosc.pracownicy VALUES (10, 'Mateusz', 'Kowalski', 'ul. Dobczycka 78/1, Wieliczka, 32-768', '+48116748500')
 
@@ -139,25 +139,25 @@ INSERT INTO ksiegowosc.godziny VALUES (162, '2023-04-20', 170, 6)
 INSERT INTO ksiegowosc.godziny VALUES (163, '2023-04-20', 160, 4)
 
 INSERT INTO ksiegowosc.pensje VALUES (1,'dyrektor', 20500.15)
-INSERT INTO ksiegowosc.pensje VALUES (2,'in¿ynier', 8200.45)
+INSERT INTO ksiegowosc.pensje VALUES (2,'inÅ¼ynier', 8200.45)
 INSERT INTO ksiegowosc.pensje VALUES (3,'programista', 8500.23)
 INSERT INTO ksiegowosc.pensje VALUES (4,'manager', 10400.67)
 INSERT INTO ksiegowosc.pensje VALUES (5,'asystent', 5600.78)
-INSERT INTO ksiegowosc.pensje VALUES (6,'sta¿ysta', 950.11)
-INSERT INTO ksiegowosc.pensje VALUES (7,'in¿ynier', 8200.45)
-INSERT INTO ksiegowosc.pensje VALUES (8,'sta¿ysta', 2500.11)
+INSERT INTO ksiegowosc.pensje VALUES (6,'staÅ¼ysta', 950.11)
+INSERT INTO ksiegowosc.pensje VALUES (7,'inÅ¼ynier', 8200.45)
+INSERT INTO ksiegowosc.pensje VALUES (8,'staÅ¼ysta', 2500.11)
 INSERT INTO ksiegowosc.pensje VALUES (9,'programista', 8500.45)
-INSERT INTO ksiegowosc.pensje VALUES (10,'sta¿ysta', 1150.00)
+INSERT INTO ksiegowosc.pensje VALUES (10,'staÅ¼ysta', 1150.00)
 
-INSERT INTO ksiegowosc.premie VALUES (44, 'œwi¹teczna', 1500)
+INSERT INTO ksiegowosc.premie VALUES (44, 'Å›wiÄ…teczna', 1500)
 INSERT INTO ksiegowosc.premie VALUES (45, 'uznaniowa', 500)
 INSERT INTO ksiegowosc.premie VALUES (46, 'indywidualna', 350)
-INSERT INTO ksiegowosc.premie VALUES (47, 'œwi¹teczna', 1000)
+INSERT INTO ksiegowosc.premie VALUES (47, 'Å›wiÄ…teczna', 1000)
 INSERT INTO ksiegowosc.premie VALUES (48, 'kwartalna', 300)
 INSERT INTO ksiegowosc.premie VALUES (49, 'motywacyjna', 250)
-INSERT INTO ksiegowosc.premie VALUES (50, 'œwi¹teczna', 500)
+INSERT INTO ksiegowosc.premie VALUES (50, 'Å›wiÄ…teczna', 500)
 INSERT INTO ksiegowosc.premie VALUES (51, 'motywacyjna', 250)
-INSERT INTO ksiegowosc.premie VALUES (52, 'œwi¹teczna', 500)
+INSERT INTO ksiegowosc.premie VALUES (52, 'Å›wiÄ…teczna', 500)
 INSERT INTO ksiegowosc.premie VALUES (53, 'motywacyjna', 250)
 
 INSERT INTO ksiegowosc.wynagrodzenia VALUES (10,'2023-04-30',1,157,2,NULL)
@@ -171,41 +171,41 @@ INSERT INTO ksiegowosc.wynagrodzenia VALUES (17,'2023-04-30',8,158,7,51)
 INSERT INTO ksiegowosc.wynagrodzenia VALUES (18,'2023-04-30',9,161,1,48)
 INSERT INTO ksiegowosc.wynagrodzenia VALUES (19,'2023-04-30',10,160,8,NULL)
 
---5a Wyœwietl tylko id pracownika oraz jego nazwisko
+--5a WyÅ›wietl tylko id pracownika oraz jego nazwisko
 SELECT id_pracownika, nazwisko 
 FROM ksiegowosc.pracownicy;
 
---5b  Wyœwietl id pracowników, których p³aca jest wiêksza ni¿ 1000
+--5b  WyÅ›wietl id pracownikÃ³w, ktÃ³rych pÅ‚aca jest wiÄ™ksza niÅ¼ 1000
 SELECT id_pracownika 
 FROM ksiegowosc.wynagrodzenia
 INNER JOIN ksiegowosc.pensje ON ksiegowosc.pensje.[id_pensji] = ksiegowosc.wynagrodzenia.[id_pensji]
 LEFT OUTER JOIN ksiegowosc.premie ON ksiegowosc.premie.[id_premii] = ksiegowosc.wynagrodzenia.[id_premii]
 WHERE (pensje.[kwota]+ ISNULL(premie.[kwota], 0)) > 1000;
 
---5c  Wyœwietl id pracowników nieposiadaj¹cych premii, których p³aca jest wiêksza ni¿ 2000
+--5c  WyÅ›wietl id pracownikÃ³w nieposiadajÄ…cych premii, ktÃ³rych pÅ‚aca jest wiÄ™ksza niÅ¼ 2000
 SELECT id_pracownika
 FROM ksiegowosc.wynagrodzenia
 INNER JOIN ksiegowosc.pensje ON ksiegowosc.pensje.[id_pensji] = ksiegowosc.wynagrodzenia.[id_pensji]
 LEFT OUTER JOIN ksiegowosc.premie ON ksiegowosc.premie.[id_premii] = ksiegowosc.wynagrodzenia.[id_premii]
 WHERE wynagrodzenia.[id_premii] IS NULL AND (pensje.[kwota]+ ISNULL(premie.[kwota], 0)) > 2000;
 
---5d Wyœwietl pracowników, których pierwsza litera imienia zaczyna siê na literê ‘J’
+--5d WyÅ›wietl pracownikÃ³w, ktÃ³rych pierwsza litera imienia zaczyna siÄ™ na literÄ™ â€˜Jâ€™
 SELECT *
 FROM ksiegowosc.pracownicy
 WHERE imie LIKE 'J%';
 
---5e Wyœwietl pracowników, których nazwisko zawiera literê ‘n’ oraz imiê koñczy siê na literê ‘a’.
+--5e WyÅ›wietl pracownikÃ³w, ktÃ³rych nazwisko zawiera literÄ™ â€˜nâ€™ oraz imiÄ™ koÅ„czy siÄ™ na literÄ™ â€˜aâ€™.
 SELECT *
 FROM ksiegowosc.pracownicy
 WHERE nazwisko LIKE '%n%' AND imie LIKE '%a';
 
---5f Wyœwietl imiê i nazwisko pracowników oraz liczbê ich nadgodzin, przyjmuj¹c, i¿ standardowy czas pracy to 160 h miesiêcznie. 
+--5f WyÅ›wietl imiÄ™ i nazwisko pracownikÃ³w oraz liczbÄ™ ich nadgodzin, przyjmujÄ…c, iÅ¼ standardowy czas pracy to 160 h miesiÄ™cznie. 
 SELECT imie, nazwisko, godziny.[liczba_godzin]-160 as liczba_nadgodzin
 FROM ksiegowosc.pracownicy
 INNER JOIN ksiegowosc.godziny ON ksiegowosc.godziny.[id_pracownika] = ksiegowosc.pracownicy.[id_pracownika]
 WHERE (liczba_godzin-160)>0;
 
---5g Wyœwietl imiê i nazwisko pracowników, których pensja zawiera siê w przedziale 1500 – 3000 PLN.
+--5g WyÅ›wietl imiÄ™ i nazwisko pracownikÃ³w, ktÃ³rych pensja zawiera siÄ™ w przedziale 1500 â€“ 3000 PLN.
 SELECT imie, nazwisko
 FROM ksiegowosc.pracownicy
 INNER JOIN ksiegowosc.wynagrodzenia ON ksiegowosc.wynagrodzenia.[id_pracownika] = ksiegowosc.pracownicy.[id_pracownika]
@@ -213,7 +213,7 @@ INNER JOIN ksiegowosc.pensje ON ksiegowosc.pensje.[id_pensji] = ksiegowosc.wynag
 LEFT OUTER JOIN ksiegowosc.premie ON ksiegowosc.premie.[id_premii] = ksiegowosc.wynagrodzenia.[id_premii]
 WHERE (pensje.[kwota]+ ISNULL(premie.[kwota], 0)) BETWEEN 1500 AND 3200;
 
---5h Wyœwietl imiê i nazwisko pracowników, którzy pracowali w nadgodzinachi nie otrzymali premii
+--5h WyÅ›wietl imiÄ™ i nazwisko pracownikÃ³w, ktÃ³rzy pracowali w nadgodzinachi nie otrzymali premii
 SELECT imie, nazwisko
 FROM ksiegowosc.pracownicy
 INNER JOIN ksiegowosc.godziny ON ksiegowosc.godziny.[id_pracownika] = ksiegowosc.pracownicy.[id_pracownika]
@@ -221,14 +221,14 @@ INNER JOIN ksiegowosc.wynagrodzenia ON ksiegowosc.wynagrodzenia.[id_pracownika] 
 LEFT OUTER JOIN ksiegowosc.premie ON ksiegowosc.premie.[id_premii] = ksiegowosc.wynagrodzenia.[id_premii]
 WHERE (liczba_godzin-160) > 0 AND wynagrodzenia.[id_premii] IS NULL;
 
---5i Uszereguj pracowników wed³ug pensji
+--5i Uszereguj pracownikÃ³w wedÅ‚ug pensji
 SELECT pracownicy.[id_pracownika], imie, nazwisko, kwota
 FROM ksiegowosc.pracownicy
 INNER JOIN ksiegowosc.wynagrodzenia ON ksiegowosc.wynagrodzenia.[id_pracownika] = ksiegowosc.pracownicy.[id_pracownika]
 INNER JOIN ksiegowosc.pensje ON ksiegowosc.pensje.[id_pensji] = ksiegowosc.wynagrodzenia.[id_pensji]
 ORDER BY pensje.[kwota];
 
---5j Uszereguj pracowników wed³ug pensji i premii malej¹co
+--5j Uszereguj pracownikÃ³w wedÅ‚ug pensji i premii malejÄ…co
 SELECT pracownicy.[id_pracownika], imie, nazwisko, pensje.[kwota] as pensja, premie.[kwota] as premia
 FROM ksiegowosc.pracownicy
 INNER JOIN ksiegowosc.wynagrodzenia ON ksiegowosc.wynagrodzenia.[id_pracownika] = ksiegowosc.pracownicy.[id_pracownika]
@@ -236,46 +236,44 @@ INNER JOIN ksiegowosc.pensje ON ksiegowosc.pensje.[id_pensji] = ksiegowosc.wynag
 LEFT OUTER JOIN ksiegowosc.premie ON ksiegowosc.premie.[id_premii] = ksiegowosc.wynagrodzenia.[id_premii]
 ORDER BY pensje.[kwota] desc, premie.[kwota] desc; 
 
---5k Zlicz i pogrupuj pracowników wed³ug pola ‘stanowisko'
-SELECT pensje.stanowisko, count(pracownicy.id_pracownika) AS iloœæ_pracowników  
+--5k Zlicz i pogrupuj pracownikÃ³w wedÅ‚ug pola â€˜stanowisko'
+SELECT pensje.stanowisko, count(pracownicy.id_pracownika) AS iloÅ›Ä‡_pracownikÃ³w  
 FROM ksiegowosc.pracownicy
 INNER JOIN ksiegowosc.wynagrodzenia ON ksiegowosc.wynagrodzenia.[id_pracownika] = ksiegowosc.pracownicy.[id_pracownika]
 INNER JOIN ksiegowosc.pensje ON ksiegowosc.pensje.[id_pensji] = ksiegowosc.wynagrodzenia.[id_pensji]
 GROUP BY pensje.[stanowisko];
 
---5l Policz œredni¹, minimaln¹ i maksymaln¹ p³acê dla stanowiska ‘in¿ynier’ 
-
-SELECT stanowisko, MIN(pensje.[kwota]+ISNULL(premie.[kwota],0)) AS "minimalna", MAX(pensje.[kwota]+ISNULL(premie.[kwota],0)) AS "maksymalna", AVG(pensje.[kwota]+ISNULL(premie.[kwota],0)) AS "œrednia"
+--5l Policz Å›redniÄ…, minimalnÄ… i maksymalnÄ… pÅ‚acÄ™ dla stanowiska â€˜inÅ¼ynierâ€™ 
+SELECT stanowisko, MIN(pensje.[kwota]+ISNULL(premie.[kwota],0)) AS "minimalna", MAX(pensje.[kwota]+ISNULL(premie.[kwota],0)) AS "maksymalna", AVG(pensje.[kwota]+ISNULL(premie.[kwota],0)) AS "Å›rednia"
 FROM ksiegowosc.wynagrodzenia
 INNER JOIN ksiegowosc.pensje ON ksiegowosc.pensje.[id_pensji] = ksiegowosc.wynagrodzenia.[id_pensji]
 LEFT OUTER JOIN ksiegowosc.premie ON ksiegowosc.premie.[id_premii] = ksiegowosc.wynagrodzenia.[id_premii]
-WHERE stanowisko = 'sta¿ysta'
+WHERE stanowisko = 'staÅ¼ysta'
 GROUP BY stanowisko;
 
---5m Policz sumê wszystkich wynagrodzeñ
-SELECT (SUM(pensje.[kwota])) + SUM(ISNULL(premie.[kwota],0)) AS suma_wynagrodzeñ
+--5m Policz sumÄ™ wszystkich wynagrodzeÅ„
+SELECT (SUM(pensje.[kwota])) + SUM(ISNULL(premie.[kwota],0)) AS suma_wynagrodzeÅ„
 FROM ksiegowosc.wynagrodzenia
 INNER JOIN ksiegowosc.pensje ON ksiegowosc.pensje.[id_pensji] = ksiegowosc.wynagrodzenia.[id_pensji]
 LEFT OUTER JOIN ksiegowosc.premie ON ksiegowosc.premie.[id_premii] = ksiegowosc.wynagrodzenia.[id_premii]
 ;
 
---5n Policz sumê wynagrodzeñ w ramach danego stanowiska
-SELECT pensje.[stanowisko], (SUM(pensje.[kwota])) + SUM(ISNULL(premie.[kwota],0)) AS suma_wynagrodzeñ
+--5n Policz sumÄ™ wynagrodzeÅ„ w ramach danego stanowiska
+SELECT pensje.[stanowisko], (SUM(pensje.[kwota])) + SUM(ISNULL(premie.[kwota],0)) AS suma_wynagrodzeÅ„
 FROM ksiegowosc.wynagrodzenia
 INNER JOIN ksiegowosc.pensje ON ksiegowosc.pensje.[id_pensji] = ksiegowosc.wynagrodzenia.[id_pensji]
 LEFT OUTER JOIN ksiegowosc.premie ON ksiegowosc.premie.[id_premii] = ksiegowosc.wynagrodzenia.[id_premii]
 GROUP BY pensje.stanowisko 
 ;
 
---5o Wyznacz liczbê premii przyznanych dla pracowników danego stanowiska.
+--5o Wyznacz liczbÄ™ premii przyznanych dla pracownikÃ³w danego stanowiska.
 SELECT pensje.[stanowisko], COUNT(premie.id_premii) AS liczba_premii
 FROM ksiegowosc.wynagrodzenia
 INNER JOIN ksiegowosc.pensje ON ksiegowosc.pensje.[id_pensji] = ksiegowosc.wynagrodzenia.[id_pensji]
 LEFT OUTER JOIN ksiegowosc.premie ON ksiegowosc.premie.[id_premii] = ksiegowosc.wynagrodzenia.[id_premii]
 GROUP BY pensje.[stanowisko];
 
---5p Usuñ wszystkich pracowników maj¹cych pensjê mniejsz¹ ni¿ 1200 z³.
-
+--5p UsuÅ„ wszystkich pracownikÃ³w majÄ…cych pensjÄ™ mniejszÄ… niÅ¼ 1200 zÅ‚.
 EXEC sp_MSForEachTable 'ALTER TABLE ? NOCHECK CONSTRAINT ALL'
 GO
 DELETE pracownicy
