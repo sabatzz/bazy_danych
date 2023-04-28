@@ -243,7 +243,7 @@ INNER JOIN ksiegowosc.wynagrodzenia ON ksiegowosc.wynagrodzenia.[id_pracownika] 
 INNER JOIN ksiegowosc.pensje ON ksiegowosc.pensje.[id_pensji] = ksiegowosc.wynagrodzenia.[id_pensji]
 GROUP BY pensje.[stanowisko];
 
---5l Policz średnią, minimalną i maksymalną płacę dla stanowiska ‘inżynier’ 
+--5l Policz średnią, minimalną i maksymalną płacę dla stanowiska ‘stażysta’ 
 SELECT stanowisko, MIN(pensje.[kwota]+ISNULL(premie.[kwota],0)) AS "minimalna", MAX(pensje.[kwota]+ISNULL(premie.[kwota],0)) AS "maksymalna", AVG(pensje.[kwota]+ISNULL(premie.[kwota],0)) AS "średnia"
 FROM ksiegowosc.wynagrodzenia
 INNER JOIN ksiegowosc.pensje ON ksiegowosc.pensje.[id_pensji] = ksiegowosc.wynagrodzenia.[id_pensji]
