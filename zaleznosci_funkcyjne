@@ -1,0 +1,62 @@
+CREATE TABLE zamowienia (
+id_produktu INT AUTO_INCREMENT PRIMARY KEY, 
+nazwa_produktu VARCHAR(150) NOT NULL UNIQUE,
+id_klienta INT NOT NULL UNIQUE ,
+nazwa_klienta VARCHAR(70) UNIQUE,
+data_zamowienia DATE,
+cena_produktu DECIMAL(6,2),
+ilosc INT,
+VAT DECIMAL(2,2) NOT NULL,
+suma_brutto DECIMAL(6,2) NOT NULL,
+suma_netto DECIMAL(6,2) NOT NULL
+);
+
+Zadanie 1
+Zalażności funkcyjne:
+
+id_produktu -> nazwa_produktu, cena_produktu, VAT
+id_klienta -> nazwa_klienta, data_zamowienia
+suma_netto -> cena_produktu, ilość
+suma_brutto -> cena_produktu, ilość, VAT
+suma_brutto -> suma_netto, VAT
+suma_brutto -> id_produktu, ilość
+nazwa_produktu -> VAT
+
+Zadanie 2
+Klucze kandydujące proste:
+
+id_produktu
+id_klienta
+
+Klucze kandydujące złożone:
+
+id_produktu, id_klienta
+id_klienta, data_zamowienia
+
+CREATE TABLE pomieszczenia(
+id_pomieszczenia INT AUTO_INCREMENT PRIMARY KEY,
+numer_pomieszczenia INT NOT NULL UNIQUE,
+id_budynku INT NOT NULL UNIQUE,
+powierzchnia DECIMAL(4,2),
+liczba_okien INT NOT NULL,
+liczba_drzwi INT NOT NULL, 
+ulica VARCHAR(70),
+miasto VARCHAR(70),
+kod_pocztowy VARCHAR(10) NOT NULL,
+);
+
+Zadanie 3
+
+Zależności funkcyjne:
+
+id_pomieszczenia -> numer_pomieszczenia, id_budynku, powierzchnia, liczba_okien, liczba_drzwi
+id_budynku -> ulica, miasto, kod_pocztowy
+kod_pocztowy -> ulica, miasto
+
+Klucze kandydujące proste:
+id_pomieszczenia
+id_budynku
+
+Klucze kandydujace złożone:
+id_budynku, id_pomieszczenia
+miasto, ulica, id_budynku, numer_pomieszczenia
