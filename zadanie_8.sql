@@ -1,9 +1,34 @@
--- 1. Wykorzystuj¹c wyra¿enie CTE zbuduj zapytanie, które znajdzie informacje na temat stawki 
---pracownika oraz jego danych, a nastêpnie zapisze je do tabeli tymczasowej 
---TempEmployeeInfo. Rozwi¹¿ w oparciu o AdventureWorks.USE AdventureWorks2019;WITH TempEmployeeInfo(NationalIDNumber,LoginID,JobTitle,BirthDate,MaritalStatus,Gender,Rate)AS(SELECT NationalIDNumber,LoginID,JobTitle,BirthDate,MaritalStatus,Gender,RateFROM AdventureWorks2019.HumanResources.Employee e
+-- 1. WykorzystujÂ¹c wyraÂ¿enie CTE zbuduj zapytanie, ktÃ³re znajdzie informacje na temat stawki 
+--pracownika oraz jego danych, a nastÃªpnie zapisze je do tabeli tymczasowej 
+
+USE AdventureWorks2019;
+
+WITH TempEmployeeInfo(
+NationalIDNumber,
+LoginID,
+JobTitle,
+BirthDate,
+MaritalStatus,
+Gender,
+Rate)
+
+AS(
+SELECT NationalIDNumber,
+LoginID,
+JobTitle,
+BirthDate,
+MaritalStatus,
+Gender,
+Rate
+FROM AdventureWorks2019.HumanResources.Employee e
 INNER JOIN AdventureWorks2019.HumanResources.EmployeePayHistory eph ON e.BusinessEntityID = eph.BusinessEntityID
-)SELECT * FROM TempEmployeeInfo;--2. Uzyskaj informacje na temat przychodów ze sprzeda¿y wed³ug firmy i kontaktu (za pomoc¹ 
---CTE i bazy AdventureWorksL)WITH IncomeInfo(
+)
+SELECT * FROM TempEmployeeInfo;
+
+
+--2. Uzyskaj informacje na temat przychodÃ³w ze sprzedaÂ¿y wedÂ³ug firmy i kontaktu (za pomocÂ¹ 
+--CTE i bazy AdventureWorksL)
+WITH IncomeInfo(
 	Contact,
 	Income
 )
@@ -17,11 +42,13 @@ INNER JOIN AdventureWorksLT2019.SalesLT.SalesOrderHeader soh ON c.CustomerID = s
 
 SELECT * FROM IncomeInfo
 ORDER BY Contact;
---3. Napisz zapytanie, które zwróci wartoœæ sprzeda¿y dla poszczególnych kategorii produktów.
---Wykorzystaj CTE i bazê AdventureWorksLT
+
+
+--3. Napisz zapytanie, ktÃ³re zwrÃ³ci wartoÅ“Ã¦ sprzedaÂ¿y dla poszczegÃ³lnych kategorii produktÃ³w.
+--Wykorzystaj CTE i bazÃª AdventureWorksLT
 --UnitPrice- cena produktu
---UnitPriceDiscount - zni¿ka
---OrderQty - zamówiona iloœæ
+--UnitPriceDiscount - zniÂ¿ka
+--OrderQty - zamÃ³wiona iloÅ“Ã¦
 
 WITH Sales(
 	Category,
